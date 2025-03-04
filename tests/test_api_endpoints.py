@@ -4,3 +4,8 @@
 # 3. Assert response status codes, headers and payload contents
 # 4. Report results locally (via pytest console output)
 # 5. Generate polished report for the dashboard and logs
+
+import pytest
+from endpoints.EndpointFactory import EndpointFactory
+
+# Star Wars API link
