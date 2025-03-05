@@ -75,8 +75,8 @@ project-root/
 
 1. **Clone the Repository**  
    ````````````bash
-   git clone https://github.com/&lt;YourUsername&gt;/&lt;RepoName&gt;.git
-   cd &lt;RepoName&gt;
+   git clone https://github.com/wilsontu/PyAPI-CloudTest.git
+   cd PYAPI-CLOUDTEST
    ````````````
 
 2. **Create & Activate a Virtual Environment**  
