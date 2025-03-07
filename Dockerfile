@@ -1,9 +1,6 @@
 # Use a Python base image
 FROM python:3.11-slim
 
-# Install docker inside docker container
-RUN curl -fsSL https://get.docker.com | sh
-
 # Prevent Python from writing .pyc files and buffering stdout
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
