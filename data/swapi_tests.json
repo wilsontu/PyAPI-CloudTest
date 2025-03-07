@@ -1,0 +1,70 @@
+{
+    "people": [
+        {
+            "item_id": 1,
+            "values": {
+                "name": "Luke Skywalker",
+                "height": "172",
+                "mass": "77",
+                "hair_color": "blond",
+                "skin_color": "fair",
+                "eye_color": "blue",
+                "birth_year": "19BBY",
+                "gender": "male"
+            }
+        },
+        {
+            "item_id": 2,
+            "values": {
+                "name": "C-3PO",
+                "height": "167",
+                "mass": "75",
+                "hair_color": "n/a",
+                "skin_color": "gold",
+                "eye_color": "yellow",
+                "birth_year": "112BBY",
+                "gender": "n/a"
+            }
+        },
+        {
+            "item_id": 3,
+            "values": {
+                "name": "R2-D2",
+                "height": "96",
+                "mass": "32",
+                "hair_color": "n/a",
+                "skin_color": "white, blue",
+                "eye_color": "red",
+                "birth_year": "33BBY",
+                "gender": "n/a"
+            }
+        }
+    ],
+    "planets": [
+        {
+            "item_id": 1,
+            "values": {
+                "climate": "Arid",
+                "diameter": "10465",
+                "gravity": "1 standard",
+                "name": "Tatooine",
+                "orbital_period": "304",
+                "population": "200000"
+            }
+        },
+        {
+            "item_id": 2,
+            "values": {
+                "name": "Alderaan",
+                "rotation_period": "24",
+                "orbital_period": "364",
+                "diameter": "12500",
+                "climate": "temperate",
+                "gravity": "1 standard",
+                "terrain": "grasslands, mountains",
+                "surface_water": "40",
+                "population": "2000000000"
+            } 
+        }
+    ]
+}
