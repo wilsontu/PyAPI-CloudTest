@@ -121,3 +121,49 @@ def test_invalid_planet_id():
 
     response = swapi_endpoint.get_resource("planets", -1)
     assert response.status_code == 404
+
+'''
+FILMS
+'''
+@pytest.mark.parametrize("test_case", load_test_data("films"))
+def test_get_people(test_case):
+    '''
+    Test fetching all the films in star wars API
+    '''
+    # Get the resources needed
+    resource_str = "films"
+    item_id = test_case["item_id"]
+    values = test_case["values"]
+
+    response = swapi_endpoint.get_resource(resource_str, item_id)
+    assert response.status_code == 200
+    assert response.headers["Content-Type"] == "application/json"
+
+    data = response.json()
+    expected_keys = {
+        "title", "episode_id", "opening_crawl", "director", "producer", "release_date",
+        "species", "starships", "vehicles", "characters", "planets", "url", "created", "edited"
+    }
+    assert expected_keys.issubset(data.keys()),  \
+           f"Some expected keys are missing: {expected_keys - data.keys()}"
+    for key in values.keys():
+        assert values[key] == data[key]
+
+
+def test_get_all_films():
+    response = swapi_endpoint.get_resource("films")
+    assert response.status_code == 200
+    assert response.headers["Content-Type"] == "application/json"
+
+    data = response.json()
+    assert data['count'] == 6
+
+def test_invalid_films_id():
+    response = swapi_endpoint.get_resource("films", 7)
+    assert response.status_code == 404
+
+    response = swapi_endpoint.get_resource("films", 0)
+    assert response.status_code == 404
+
+    response = swapi_endpoint.get_resource("films", -1)
+    assert response.status_code == 404
