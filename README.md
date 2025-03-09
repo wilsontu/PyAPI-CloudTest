@@ -65,7 +65,7 @@ project-root/
   ````````````
 - **Git**  
   Required for cloning the repository and version control.
-- **Docker** (optional for Day 1, essential for containerizing later).  
+- **Docker** (essential for containerizing).  
   ````````````bash
   docker --version
   ````````````
