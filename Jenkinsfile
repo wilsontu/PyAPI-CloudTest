@@ -1,6 +1,5 @@
 pipeline {
-    agent any
-
+    agent any 
     stages {
         stage('Checkout') {
             steps {
@@ -8,27 +7,18 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo "Building the project..."
-                // e.g. Docker build, or pip install, etc.
-                // sh 'docker build -t my-api-tests:latest .'
+                // Example: building the Docker image from a Dockerfile
+                sh 'docker build -t my-api-tests:latest .'
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
-                echo "Running tests..."
-                // e.g. Docker run or pytest
-                // sh 'docker run --rm my-api-tests:latest'
-                // or, if you're not using Docker:
-                // sh 'pytest --maxfail=1 --disable-warnings -v'
+                // For example, running a container that executes tests
+                sh 'docker run --rm my-api-tests:latest'
             }
-        }
-    }
-    post {
-        always {
-            echo "Pipeline finished."
         }
     }
 }
