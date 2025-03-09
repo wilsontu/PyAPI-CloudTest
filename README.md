@@ -8,7 +8,6 @@ A Python-based framework for automated API testing, containerized with Docker an
 3. [Prerequisites](#prerequisites)  
 4. [Installation](#installation)  
 5. [Usage](#usage)  
-6. [Roadmap](#roadmap) 
 
 ---
 
@@ -17,9 +16,7 @@ This project aims to simplify and automate the testing of RESTful APIs. It uses:
 - **Requests** for making HTTP calls.
 - **Pytest** for structuring and running tests.
 - **Data-Driven Testing** using CSV/JSON files (planned for upcoming days).
-- **Flask** (or Django) for a basic dashboard to visualize test results (in later phases).
-- **Docker** for containerization and consistent deployment.
-- **Cloud deployment** (AWS, GCP, or Azure) to run these tests at scale.
+- **Docker** for containerization and consistent deployment
 
 ### Key Features
 - Automated test cases for GET, POST, PUT, DELETE endpoints.
@@ -30,16 +27,19 @@ This project aims to simplify and automate the testing of RESTful APIs. It uses:
 ---
 
 ## Project Structure
-A recommended project structure is as follows:
+The project structure is as follows:
 
 ````````````
 project-root/
   ├─ tests/
   │  └─ test_api_endpoints.py   # Contains your pytest test cases
   ├─ data/
-  │  └─ test_data.csv           # (Example) Data files for test cases
-  ├─ dashboard/                 # Flask or Django app for displaying results
+  │  └─ test_data.json           # (Example) Data files for test cases
+  ├─ endpoints/
+  │  └─ endpoint_factory.py      # Factory pattern for API test
+  │  └─ api_endpoint.py          # Page Object pattern for API test
   ├─ requirements.txt
+  ├─ Jenkinsfile
   ├─ Dockerfile
   ├─ README.md
   └─ ...
@@ -49,9 +49,10 @@ project-root/
 |--------------------|-----------------------------------------------------------|
 | `tests/`           | Holds all test files and supporting modules.             |
 | `data/`            | Stores CSV/JSON files for data-driven testing.           |
-| `dashboard/`       | Hosts the web framework code (Flask or Django).          |
+| `endpoints/`       | Hosts the Factory and Page Object Model for API testing  |
 | `requirements.txt` | Lists Python dependencies for the project.               |
 | `Dockerfile`       | Instructions to containerize the application.            |
+| `Jenkinsfile`      | Jenkins Instruction files for CI/CD.                     |
 | `README.md`        | Project documentation (this file).                       |
 
 ---
@@ -114,29 +115,3 @@ project-root/
 
 ---
 
-## Roadmap
-
-1. **Test Scripting (Day 2–3)**  
-   - Write basic API test cases for GET, POST, PUT, DELETE.  
-   - Introduce data-driven testing with CSV/JSON.
-
-2. **Containerization & CI/CD (Day 4–5)**  
-   - Create a Dockerfile to containerize the tests.  
-   - Set up CI/CD pipelines to run tests on every commit.
-
-3. **Dashboard & Cloud Setup (Day 6–7)**  
-   - Develop a Flask or Django app to display test results.  
-   - Deploy container to AWS/GCP/Azure and configure an API gateway.
-
-4. **Monitoring, Logging & Alerts (Day 8)**  
-   - Integrate logging to a cloud database.  
-   - Set up alerts via email or Slack when tests fail.
-
-5. **Load Testing & Security (Day 9)**  
-   - Conduct load tests with Locust or JMeter.  
-   - Review security best practices and ensure compliance.
-
-6. **Final Integration & Documentation (Day 10–14)**  
-   - Comprehensive testing, bug fixes, final documentation, and handover.
-
----
