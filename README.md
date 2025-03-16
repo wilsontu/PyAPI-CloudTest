@@ -1,6 +1,6 @@
 # Cloud-Based API Testing Framework
 
-A Python-based framework for automated API testing, containerized with Docker and integrated with a continuous integration (CI/CD) pipeline. This framework includes data-driven testing, cloud deployment, and a web dashboard for monitoring test results and metrics.
+A Python-based framework for automated API testing, containerized with Docker and integrated with a continuous integration (CI/CD) pipeline. This framework includes data-driven testing, cloud deployment
 
 ## Table of Contents
 1. [Overview](#overview)  
@@ -111,7 +111,7 @@ project-root/
 
 3. **View Test Reports**
    - For now, your results are visible in the console.
-   - In the future, a dashboard (Flask or Django) will visualize results more neatly.
+   - In the future, will possibly add a dashboard (Flask or Django) will visualize results more neatly.
 
 ---
 
